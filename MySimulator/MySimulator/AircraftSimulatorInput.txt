@@ -1,0 +1,13 @@
+
+#Aircraft (choices are: BOEING-747-100)
+BOEING-747-100
+
+#Intial Speed(units: fps)
+774.0
+
+#intial States 
+# dU	w	q	dTheta	v	p	r	Phi	Shi	x	y	z
+  0.0	0.0	0.0	0.0	0.0	0.0	0.0	0.0	0.0	0.0	0.0	15000.0 
+
+#Manoeuvre (Format: timeInterval(sec) Elevator(deg) Throttle Alerion(deg) Rudder(deg)
+30 0 0 -15 0
