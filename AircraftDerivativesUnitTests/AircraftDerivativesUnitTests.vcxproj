@@ -43,6 +43,7 @@
     <ClCompile>
       <WarningLevel>Level3</WarningLevel>
       <Optimization>Disabled</Optimization>
+      <AdditionalIncludeDirectories>C:\Users\burlo\Documents\GitHub\Firebird_Simulations\AircraftDerivatives;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <GenerateDebugInformation>true</GenerateDebugInformation>
@@ -63,6 +64,16 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp" />
+    <ClCompile Include="TestAircraftDimensionalDerivatives.cpp" />
+    <ClCompile Include="TestAircraftNonDimensionalDerivatives.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\AircraftDerivatives\AircraftDerivatives.vcxproj">
+      <Project>{34f717c1-bab2-4fd3-9c63-bbf849ab51f8}</Project>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="AircraftCoefficientsMock.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

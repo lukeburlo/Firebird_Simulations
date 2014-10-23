@@ -16,7 +16,7 @@
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
-    <ConfigurationType>DynamicLibrary</ConfigurationType>
+    <ConfigurationType>StaticLibrary</ConfigurationType>
     <UseDebugLibraries>true</UseDebugLibraries>
     <CharacterSet>MultiByte</CharacterSet>
   </PropertyGroup>
@@ -63,12 +63,16 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClInclude Include="..\MySimulator\MySimulator\IAircraft.h" />
-    <ClInclude Include="AircraftDerivatives.h" />
+    <ClInclude Include="AircraftDimensionalDerivatives.h" />
+    <ClInclude Include="AircraftNonDimensionalDerivatives.h" />
+    <ClInclude Include="AircraftProperties.h" />
     <ClInclude Include="IAircraftCoefficients.h" />
+    <ClInclude Include="IAircraftNonDimensionalDerivatives.h" />
     <ClInclude Include="NavionAircraftCoefficients.h" />
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="AircraftDerivative.cpp" />
+    <ClCompile Include="AircraftDimensionalDerivatives.cpp" />
+    <ClCompile Include="AircraftNonDimensionalDerivatives.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

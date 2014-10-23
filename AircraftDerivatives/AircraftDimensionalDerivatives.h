@@ -1,6 +1,6 @@
 /*********************************************************************************************************************/
 //
-//  AircraftDerivatives.h
+//  AircraftDimensionalDerivatives.h
 //  Class Description: 
 //
 //  Created by Luke Burlovich on 29/11/2013
@@ -9,23 +9,37 @@
 //
 /*********************************************************************************************************************/
 
-#ifndef _AircraftDerivatives_h_  
-#define _AircraftDerivatives_h_    
+#ifndef _AircraftDimensionalDerivatives_h_  
+#define _AircraftDimensionalDerivatives_h_    
 
 #include "IAircraft.h"
+#include "IAircraftCoefficients.h"
 
 namespace AircraftSimulation
 {
-	class AircraftDerivatives : IAircraft
+	class AircraftDimensionalDerivatives //: IAircraft
 	{
+		private:
+			IAircraftCoefficients* _pCoefficients;
+
+			void CalculateX_u();
+			double X_u;
+
+		protected:
+			void Calculate();
+
 		public:
-			virtual int GetWeight();
+			AircraftDimensionalDerivatives(IAircraftCoefficients* coefficients);
+			virtual ~AircraftDimensionalDerivatives();
+
+			/*virtual int GetWeight();
 
 			virtual double GetI_x() = 0; 
 			virtual double GetI_y() = 0; 
 			virtual double GetI_z() = 0; 
-			virtual double GetI_zx() = 0; 
+			virtual double GetI_zx() = 0; */
 
+			
 			virtual double GetX_u(); 
 	};
 }

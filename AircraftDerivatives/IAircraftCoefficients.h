@@ -17,9 +17,11 @@ namespace AircraftSimulation
 	class IAircraftCoefficients
 	{
 		public:
-			virtual int GetC_D_U() = 0;
-			virtual int GetC_D_0() = 0;
-			virtual int GetC_T_U() = 0;
+			virtual double GetC_D_M() = 0;
+			virtual double GetC_D_0() = 0;
+			virtual double GetC_T_U() = 0;
+			virtual double GetC_L_0() = 0;
+			virtual double GetdC_m_dM() = 0;
 	};
 }
 

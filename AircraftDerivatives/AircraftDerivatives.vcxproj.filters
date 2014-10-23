@@ -15,9 +15,6 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="AircraftDerivatives.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
     <ClInclude Include="..\MySimulator\MySimulator\IAircraft.h">
       <Filter>Header Files</Filter>
     </ClInclude>
@@ -27,9 +24,24 @@
     <ClInclude Include="NavionAircraftCoefficients.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="AircraftDimensionalDerivatives.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="AircraftNonDimensionalDerivatives.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="IAircraftNonDimensionalDerivatives.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="AircraftProperties.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="AircraftDerivative.cpp">
+    <ClCompile Include="AircraftDimensionalDerivatives.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="AircraftNonDimensionalDerivatives.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>

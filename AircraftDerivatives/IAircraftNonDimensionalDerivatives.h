@@ -1,6 +1,6 @@
 /*********************************************************************************************************************/
 //
-//  AircraftDerivatives.cpp
+//  IAircraftNonDimensionalDerivatives.h
 //  Class Description: 
 //
 //  Created by Luke Burlovich on 29/11/2013
@@ -8,12 +8,21 @@
 //  Firebird - Aerospace Industries. 
 //
 /*********************************************************************************************************************/
-#include "AircraftDerivatives.h"
 
-using namespace AircraftSimulation;
+#ifndef _IAircraftNonDimensionalDerivatives_h_  
+#define _IAircraftNonDimensionalDerivatives_h_    
 
+#include "IAircraftCoefficients.h"
 
-double AircraftDerivatives::GetX_u()
+namespace AircraftSimulation
 {
-	return 0.0;
+	class IAircraftNonDimensionalDerivatives 
+	{
+		public:
+			virtual double GetCX_u() = 0; 
+			virtual double GetCZ_u() = 0;
+			virtual double GetCm_u() = 0;
+	};
 }
+
+#endif
