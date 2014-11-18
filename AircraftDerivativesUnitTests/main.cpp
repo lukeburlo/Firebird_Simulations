@@ -12,6 +12,10 @@ int main()
 	UT.UTest1GetCZ_uForIncompressableFlow();
 	UT.UTest1GetCZ_uForCompressableFlow();
 	UT.UTest1GetCm_u();
+	UT.UTest1GetCZ_q();
+	UT.UTest1GetCm_q();
+	UT.UTest1GetCZ_alpha_dot();
+	UT.UTest1GetCm_alpha_dot();
 	 
 	cout << "Press any key to exit...";
 	cout << endl;

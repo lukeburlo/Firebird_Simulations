@@ -10,11 +10,12 @@
 /*********************************************************************************************************************/
 #include <math.h>
 #include "AircraftNonDimensionalDerivatives.h"
+#include "IAircraftProperties.h"
 
 namespace AircraftSimulation
 {
 	AircraftNonDimensionalDerivatives::AircraftNonDimensionalDerivatives(
-		IAircraftCoefficients* pCoefficients, double machNumber, AircraftProperties properties) :
+		IAircraftCoefficients* pCoefficients, double machNumber, IAircraftProperties* properties) :
 		_pCoefficients(pCoefficients),
 		_machNumber(machNumber),
 		_machNumberLimitForIncompressibleFlow(0.3),

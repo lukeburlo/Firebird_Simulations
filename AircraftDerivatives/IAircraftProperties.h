@@ -1,7 +1,7 @@
 /*********************************************************************************************************************/
 //
-//  AircraftProperties.h
-//  Class Description: Used as a store for aircraft properties
+//  IAircraftProperties.h
+//  Class Description: Used to define aircraft properties
 //
 //  Created by Luke Burlovich on 14/10/2014
 //  Version 1.0
@@ -9,21 +9,15 @@
 //
 /*********************************************************************************************************************/
 
-#ifndef _AircraftProperties_h_  
-#define _AircraftProperties_h_
-
-#include "IAircraftProperties.h"
+#ifndef _IAircraftProperties_h_  
+#define _IAircraftProperties_h_
 
 namespace AircraftSimulation
 {
-	class AircraftProperties : public IAircraftProperties
+	class IAircraftProperties
 	{
 		public:
-			AircraftProperties(){}
-			~AircraftProperties(){}
-
-			int TailMomentArm(){ return 0; } 
-
+			virtual int TailMomentArm() = 0; 
 	};
 }
 

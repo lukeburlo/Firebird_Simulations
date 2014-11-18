@@ -14,7 +14,7 @@
 
 #include "IAircraftCoefficients.h"
 #include "IAircraftNonDimensionalDerivatives.h"
-#include "AircraftProperties.h"
+#include "IAircraftProperties.h"
 
 namespace AircraftSimulation
 {
@@ -27,7 +27,7 @@ namespace AircraftSimulation
 			double _machNumberLimitForIncompressibleFlow;
 			double _tailEfficency;
 			double _tailVolumeRatio;
-			AircraftProperties _properties;
+			IAircraftProperties* _properties;
 
 			double _CX_u;
 			double _CZ_u;
@@ -43,7 +43,7 @@ namespace AircraftSimulation
 
 		public:
 			AircraftNonDimensionalDerivatives(IAircraftCoefficients* coefficients, double machNumber, 
-				AircraftProperties properties);
+				IAircraftProperties* properties);
 			virtual ~AircraftNonDimensionalDerivatives();
 
 			virtual double GetCX_u();

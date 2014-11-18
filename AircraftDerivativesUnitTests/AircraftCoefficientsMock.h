@@ -1,7 +1,9 @@
 #include <string>
 #include <iostream>
-#include "IAircraftCoefficients.h"
 #include <cmath> 
+#include <iomanip>
+
+#include "IAircraftCoefficients.h"
 
 using namespace std;
 
@@ -29,7 +31,7 @@ template< typename T> bool isEqual(T x, T y)
 
 template< typename T> static void UTASSERT(string testName, T expected, T actual)
 {
-	cout << "Test: " << testName << " "; 
+	cout << "Test: " <<  testName << " ";
 
 	if(isEqual<T>(expected,actual))
 	//if(expected == actual)
@@ -38,7 +40,7 @@ template< typename T> static void UTASSERT(string testName, T expected, T actual
 	}
 	else
 	{
-		cout << "FAILED.... Expected: " << expected << " Actual: " << actual <<endl;
+		cout << "*** FAILED *** .... Expected: " << expected << " Actual: " << actual <<endl;
 	}
 
 }

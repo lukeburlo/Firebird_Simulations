@@ -12,8 +12,9 @@
 #ifndef _AircraftDimensionalDerivatives_h_  
 #define _AircraftDimensionalDerivatives_h_    
 
-#include "IAircraft.h"
 #include "IAircraftCoefficients.h"
+//#include "IAircraft.h"
+
 
 namespace AircraftSimulation
 {
