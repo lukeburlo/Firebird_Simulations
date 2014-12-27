@@ -43,11 +43,20 @@ namespace AircraftSimulation
 		CalculateCX_u();
 		CalculateCZ_u();
 		CalculateCm_u();
+		CalculateCZ_q();
+		CalculateCm_q();
+		CalculateCZ_alpha_dot();
 	}
 
 	void AircraftNonDimensionalDerivatives::CalculateTailVolumeRatio()
 	{
+		_tailVolumeRatio = (_properties->GetTailMomentArm()*_properties->GetTailSurfaceArea())/
+			(_properties->GetWingSurfaceArea()*_properties->GetWingChord());
+	}
 
+	void AircraftNonDimensionalDerivatives::CalculateDownwashChangeDueToAoA()
+	{
+		
 	}
 
 	void AircraftNonDimensionalDerivatives::CalculateCX_u()
@@ -85,5 +94,34 @@ namespace AircraftSimulation
 	{
 		return _Cm_u;
 	}
+	void AircraftNonDimensionalDerivatives::CalculateCZ_q()
+	{
 
+		_CZ_q = -2*_pCoefficients->GetC_L_alpha_tail()*_pCoefficients->GetTailEfficency()*_tailVolumeRatio;
+	}
+
+	double AircraftNonDimensionalDerivatives::GetCZ_q()
+	{
+		return _CZ_q;
+	}
+	void AircraftNonDimensionalDerivatives::CalculateCm_q()
+	{
+		_Cm_q = -2*_pCoefficients->GetC_L_alpha_tail()*_pCoefficients->GetTailEfficency()*_tailVolumeRatio*
+			(_properties->GetTailMomentArm()/_properties->GetWingChord());
+	}
+
+	double AircraftNonDimensionalDerivatives::GetCm_q()
+	{
+		return _Cm_q;
+	}
+
+	void AircraftNonDimensionalDerivatives::CalculateCZ_alpha_dot()
+	{
+		_CZ_alpha_dot = -2;
+	}
+
+	double AircraftNonDimensionalDerivatives::GetCZ_alpha_dot()
+	{
+		return _CZ_alpha_dot;
+	}
 }

@@ -13,17 +13,6 @@ namespace AircraftSimulation
 			private:
 				IAircraftProperties* _pProperties;
 
-			public:
-				TestAircraftNonDimensionalDerivatives()
-				{
-					_pProperties = new AircraftProperties();
-				}
-
-				~TestAircraftNonDimensionalDerivatives()
-				{
-					if (_pProperties !=0) delete _pProperties;
-				}
-
 				void UTest1GetCX_u()
 				{
 					AircraftCoefficientsMock mock;
@@ -102,20 +91,68 @@ namespace AircraftSimulation
 				}
 				void UTest1GetCZ_q()
 				{
-					UTASSERT<double>("UTest1GetCz_q()", 0, -1);
+					AircraftCoefficientsMock mock;
+					mock.TailEfficency = 1;
+					mock.C_L_alpha_tail = 3.5;
+			
+					IAircraftCoefficients* _pMock =  (IAircraftCoefficients*) &mock;
+					AircraftNonDimensionalDerivatives NonDimensionalDerivatives(_pMock, 0.158, _pProperties);
+					
+					double CZ_q = NonDimensionalDerivatives.GetCZ_q();
+					UTASSERT<double>("UTest1GetCz_q()", -7.86, CZ_q );
 				}
 				void UTest1GetCm_q()
 				{
-					UTASSERT<double>("UTest1GetCm_q()", 0, -1);
+					AircraftCoefficientsMock mock;
+					mock.TailEfficency = 1;
+					mock.C_L_alpha_tail = 3.5;
+			
+					IAircraftCoefficients* _pMock =  (IAircraftCoefficients*) &mock;
+					AircraftNonDimensionalDerivatives NonDimensionalDerivatives(_pMock, 0.158, _pProperties);
+					
+					double Cm_q = NonDimensionalDerivatives.GetCm_q();
+					UTASSERT<double>("UTest1GetCm_q()",-35.8, Cm_q);
 				}
 				void UTest1GetCZ_alpha_dot()
 				{
-					UTASSERT<double>("UTest1GetCZ_alpha_dot()", 0, -1);
+					AircraftCoefficientsMock mock;
+			
+					IAircraftCoefficients* _pMock =  (IAircraftCoefficients*) &mock;
+					AircraftNonDimensionalDerivatives NonDimensionalDerivatives(_pMock, 0.158, _pProperties);
+					
+					double CZ_alpha_dot = NonDimensionalDerivatives.GetCZ_alpha_dot();
+					UTASSERT<double>("UTest1GetCZ_alpha_dot()", -2.62, CZ_alpha_dot);
 				}
 				void UTest1GetCm_alpha_dot()
 				{
-					UTASSERT<double>("UTest1GetCm_alpha_dot()", 0, -1);
+					UTASSERT<double>("UTest1GetCm_alpha_dot()", -11.92, -1);
 				}
+
+			public:
+				TestAircraftNonDimensionalDerivatives()
+				{
+					_pProperties = new AircraftProperties();
+				}
+
+				~TestAircraftNonDimensionalDerivatives()
+				{
+					if (_pProperties !=0) delete _pProperties;
+				}
+
+				void Run()
+				{
+					UTest1GetCX_u();
+					UTest2GetCX_u();
+					UTest1GetCZ_uForIncompressableFlow();
+					UTest1GetCZ_uForCompressableFlow();
+					UTest1GetCm_u();
+					UTest1GetCZ_q();
+					UTest1GetCm_q();
+					UTest1GetCZ_alpha_dot();
+					UTest1GetCm_alpha_dot();
+				}
+
+		
 		};
 	}
 }

@@ -17,11 +17,13 @@ namespace AircraftSimulation
 	class IAircraftCoefficients
 	{
 		public:
+			virtual float GetTailEfficency() = 0;
 			virtual double GetC_D_M() = 0;
 			virtual double GetC_D_0() = 0;
 			virtual double GetC_T_U() = 0;
 			virtual double GetC_L_0() = 0;
 			virtual double GetdC_m_dM() = 0;
+			virtual double GetC_L_alpha_tail() = 0;
 	};
 }
 

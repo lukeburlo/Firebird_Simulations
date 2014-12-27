@@ -22,7 +22,10 @@ namespace AircraftSimulation
 			AircraftProperties(){}
 			~AircraftProperties(){}
 
-			int TailMomentArm(){ return 0; } 
+			float GetTailMomentArm(){ return 46.0; }
+			float GetTailSurfaceArea(){ return 233.0; } 
+			float GetWingSurfaceArea(){ return 945.0; }
+			float GetWingChord(){ return 10.1; }
 
 	};
 }

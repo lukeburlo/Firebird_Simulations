@@ -17,7 +17,10 @@ namespace AircraftSimulation
 	class IAircraftProperties
 	{
 		public:
-			virtual int TailMomentArm() = 0; 
+			virtual float GetTailMomentArm() = 0; 
+			virtual float GetTailSurfaceArea() = 0; 
+			virtual float GetWingSurfaceArea() = 0; 
+			virtual float GetWingChord() = 0; 
 	};
 }
 
