@@ -116,16 +116,28 @@ namespace AircraftSimulation
 				void UTest1GetCZ_alpha_dot()
 				{
 					AircraftCoefficientsMock mock;
+					mock.TailEfficency = 1.0;
+					mock.C_L_alpha_wing = 5.2;
+					mock.C_L_alpha_tail = 3.5;
 			
 					IAircraftCoefficients* _pMock =  (IAircraftCoefficients*) &mock;
 					AircraftNonDimensionalDerivatives NonDimensionalDerivatives(_pMock, 0.158, _pProperties);
 					
 					double CZ_alpha_dot = NonDimensionalDerivatives.GetCZ_alpha_dot();
-					UTASSERT<double>("UTest1GetCZ_alpha_dot()", -2.62, CZ_alpha_dot);
+					UTASSERT<double>("UTest1GetCZ_alpha_dot()", -2.67, CZ_alpha_dot);
 				}
 				void UTest1GetCm_alpha_dot()
 				{
-					UTASSERT<double>("UTest1GetCm_alpha_dot()", -11.92, -1);
+					AircraftCoefficientsMock mock;
+					mock.TailEfficency = 1.0;
+					mock.C_L_alpha_wing = 5.2;
+					mock.C_L_alpha_tail = 3.5;
+			
+					IAircraftCoefficients* _pMock =  (IAircraftCoefficients*) &mock;
+					AircraftNonDimensionalDerivatives NonDimensionalDerivatives(_pMock, 0.158, _pProperties);
+					
+					double Cm_alpha_dot = NonDimensionalDerivatives.GetCm_alpha_dot();
+					UTASSERT<double>("UTest1GetCm_alpha_dot()", -12.16, Cm_alpha_dot);
 				}
 
 			public:

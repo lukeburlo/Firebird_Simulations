@@ -25,7 +25,7 @@ static void UTASSERT(string testName, bool testPassed)
 
 template< typename T> bool isEqual(T x, T y)
 {
-  const double epsilon = 1e-4;
+  const double epsilon = 1e-3;
   return std::abs(x - y) <= epsilon * std::abs(x);
 }
 
@@ -59,6 +59,7 @@ namespace AircraftSimulation
 				 double C_L_0;
 				 double dC_m_dM;
 				 double C_L_alpha_tail;
+				 double C_L_alpha_wing;
 				
 
 				 float GetTailEfficency(){ return TailEfficency; }
@@ -68,6 +69,7 @@ namespace AircraftSimulation
 				 double GetC_L_0(){ return C_L_0; }
 				 double GetdC_m_dM(){ return dC_m_dM; }
 				 double GetC_L_alpha_tail(){ return C_L_alpha_tail; }
+				 double GetC_L_alpha_wing(){ return C_L_alpha_wing; }
 				  
 		};
 	}

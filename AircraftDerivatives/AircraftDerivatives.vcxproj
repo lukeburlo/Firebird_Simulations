@@ -113,16 +113,15 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClInclude Include="..\MySimulator\MySimulator\IAircraft.h" />
-    <ClInclude Include="AircraftDimensionalDerivatives.h" />
     <ClInclude Include="AircraftNonDimensionalDerivatives.h" />
     <ClInclude Include="AircraftProperties.h" />
+    <ClInclude Include="DiagnosticsTools.h" />
     <ClInclude Include="IAircraftCoefficients.h" />
     <ClInclude Include="IAircraftNonDimensionalDerivatives.h" />
     <ClInclude Include="IAircraftProperties.h" />
     <ClInclude Include="NavionAircraftCoefficients.h" />
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="AircraftDimensionalDerivatives.cpp" />
     <ClCompile Include="AircraftNonDimensionalDerivatives.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

@@ -22,12 +22,12 @@ namespace AircraftSimulation
 	{
 		private:
 			IAircraftCoefficients* _pCoefficients;
+			IAircraftProperties* _properties;
 
 			double _machNumber;
 			double _machNumberLimitForIncompressibleFlow;
 			float _tailVolumeRatio;
 			float _downwashChangeDueToAoA;
-			IAircraftProperties* _properties;
 
 			double _CX_u;
 			double _CZ_u;
@@ -35,6 +35,7 @@ namespace AircraftSimulation
 			double _CZ_q;
 			double _Cm_q;
 			double _CZ_alpha_dot;
+			double _Cm_alpha_dot;
 
 			void CalculateTailVolumeRatio();
 			void CalculateDownwashChangeDueToAoA();
@@ -44,6 +45,7 @@ namespace AircraftSimulation
 			void CalculateCZ_q();
 			void CalculateCm_q();
 			void CalculateCZ_alpha_dot();
+			void CalculateCm_alpha_dot();
 
 		protected:
 			void Calculate();
@@ -59,6 +61,7 @@ namespace AircraftSimulation
 			virtual double GetCZ_q();
 			virtual double GetCm_q();
 			virtual double GetCZ_alpha_dot();
+			virtual double GetCm_alpha_dot();
 	};
 }
 

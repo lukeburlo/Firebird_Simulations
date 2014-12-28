@@ -26,6 +26,7 @@ namespace AircraftSimulation
 			float GetTailSurfaceArea(){ return 233.0; } 
 			float GetWingSurfaceArea(){ return 945.0; }
 			float GetWingChord(){ return 10.1; }
+			float GetWingAspectRatio() { return 9.75; }
 
 	};
 }

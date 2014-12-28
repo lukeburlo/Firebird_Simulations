@@ -24,6 +24,7 @@ namespace AircraftSimulation
 			virtual double GetC_L_0() = 0;
 			virtual double GetdC_m_dM() = 0;
 			virtual double GetC_L_alpha_tail() = 0;
+			virtual double GetC_L_alpha_wing() = 0;
 	};
 }
 

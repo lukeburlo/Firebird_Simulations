@@ -11,6 +11,11 @@
 #include <math.h>
 #include "AircraftNonDimensionalDerivatives.h"
 #include "IAircraftProperties.h"
+#include "DiagnosticsTools.h"
+
+#define PI 3.14
+
+
 
 namespace AircraftSimulation
 {
@@ -39,6 +44,7 @@ namespace AircraftSimulation
 
 	void AircraftNonDimensionalDerivatives::Calculate()
 	{
+		CalculateDownwashChangeDueToAoA();
 		CalculateTailVolumeRatio();
 		CalculateCX_u();
 		CalculateCZ_u();
@@ -46,6 +52,7 @@ namespace AircraftSimulation
 		CalculateCZ_q();
 		CalculateCm_q();
 		CalculateCZ_alpha_dot();
+		CalculateCm_alpha_dot();
 	}
 
 	void AircraftNonDimensionalDerivatives::CalculateTailVolumeRatio()
@@ -56,7 +63,7 @@ namespace AircraftSimulation
 
 	void AircraftNonDimensionalDerivatives::CalculateDownwashChangeDueToAoA()
 	{
-		
+		_downwashChangeDueToAoA = (2*_pCoefficients->GetC_L_alpha_wing()) / (PI *_properties->GetWingAspectRatio());
 	}
 
 	void AircraftNonDimensionalDerivatives::CalculateCX_u()
@@ -117,11 +124,24 @@ namespace AircraftSimulation
 
 	void AircraftNonDimensionalDerivatives::CalculateCZ_alpha_dot()
 	{
-		_CZ_alpha_dot = -2;
+		_CZ_alpha_dot = -2*_tailVolumeRatio*_pCoefficients->GetTailEfficency()*_pCoefficients->GetC_L_alpha_tail()*
+			_downwashChangeDueToAoA;
 	}
 
 	double AircraftNonDimensionalDerivatives::GetCZ_alpha_dot()
 	{
 		return _CZ_alpha_dot;
+	}
+
+
+	void AircraftNonDimensionalDerivatives::CalculateCm_alpha_dot()
+	{
+		_Cm_alpha_dot = -2*_tailVolumeRatio*_pCoefficients->GetTailEfficency()*_pCoefficients->GetC_L_alpha_tail()*
+			_downwashChangeDueToAoA*(_properties->GetTailMomentArm()/_properties->GetWingChord());
+	}
+
+	double AircraftNonDimensionalDerivatives::GetCm_alpha_dot()
+	{
+		return _Cm_alpha_dot;
 	}
 }
