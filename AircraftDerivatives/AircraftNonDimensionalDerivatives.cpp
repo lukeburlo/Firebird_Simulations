@@ -49,8 +49,10 @@ namespace AircraftSimulation
 		CalculateCX_u();
 		CalculateCZ_u();
 		CalculateCm_u();
+		CalculateCX_q();
 		CalculateCZ_q();
 		CalculateCm_q();
+		CalculateCX_alpha_dot();
 		CalculateCZ_alpha_dot();
 		CalculateCm_alpha_dot();
 	}
@@ -101,6 +103,17 @@ namespace AircraftSimulation
 	{
 		return _Cm_u;
 	}
+
+	void AircraftNonDimensionalDerivatives::CalculateCX_q()
+	{
+		_CX_q = 0;
+	}
+
+	double AircraftNonDimensionalDerivatives::GetCX_q()
+	{
+		return _CX_q;
+	}
+
 	void AircraftNonDimensionalDerivatives::CalculateCZ_q()
 	{
 
@@ -120,6 +133,16 @@ namespace AircraftSimulation
 	double AircraftNonDimensionalDerivatives::GetCm_q()
 	{
 		return _Cm_q;
+	}
+
+	void AircraftNonDimensionalDerivatives::CalculateCX_alpha_dot()
+	{
+		_CX_alpha_dot = 0;
+	}
+
+	double AircraftNonDimensionalDerivatives::GetCX_alpha_dot()
+	{
+		return _CX_alpha_dot;
 	}
 
 	void AircraftNonDimensionalDerivatives::CalculateCZ_alpha_dot()
@@ -144,4 +167,5 @@ namespace AircraftSimulation
 	{
 		return _Cm_alpha_dot;
 	}
+
 }

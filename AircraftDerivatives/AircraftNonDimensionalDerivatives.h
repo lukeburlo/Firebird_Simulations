@@ -32,8 +32,10 @@ namespace AircraftSimulation
 			double _CX_u;
 			double _CZ_u;
 			double _Cm_u;
+			double _CX_q;
 			double _CZ_q;
 			double _Cm_q;
+			double _CX_alpha_dot;
 			double _CZ_alpha_dot;
 			double _Cm_alpha_dot;
 
@@ -42,8 +44,10 @@ namespace AircraftSimulation
 			void CalculateCX_u();
 			void CalculateCZ_u();
 			void CalculateCm_u();
+			void CalculateCX_q();
 			void CalculateCZ_q();
 			void CalculateCm_q();
+			void CalculateCX_alpha_dot();
 			void CalculateCZ_alpha_dot();
 			void CalculateCm_alpha_dot();
 
@@ -58,8 +62,10 @@ namespace AircraftSimulation
 			virtual double GetCX_u();
 			virtual double GetCZ_u();
 			virtual double GetCm_u();
+			virtual double GetCX_q();
 			virtual double GetCZ_q();
 			virtual double GetCm_q();
+			virtual double GetCX_alpha_dot();
 			virtual double GetCZ_alpha_dot();
 			virtual double GetCm_alpha_dot();
 	};

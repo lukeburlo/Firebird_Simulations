@@ -89,6 +89,16 @@ namespace AircraftSimulation
 					
 					UTASSERT<double>("UTest1GetCm_u()", 0.316, Cm_u);
 				}
+				void UTest1GetCX_q()
+				{
+					AircraftCoefficientsMock mock;
+			
+					IAircraftCoefficients* _pMock =  (IAircraftCoefficients*) &mock;
+					AircraftNonDimensionalDerivatives NonDimensionalDerivatives(_pMock, 0.158, _pProperties);
+					
+					double CX_q = NonDimensionalDerivatives.GetCX_q();
+					UTASSERT<double>("UTest1GetCX_q()", 0, CX_q );
+				}
 				void UTest1GetCZ_q()
 				{
 					AircraftCoefficientsMock mock;
@@ -99,7 +109,7 @@ namespace AircraftSimulation
 					AircraftNonDimensionalDerivatives NonDimensionalDerivatives(_pMock, 0.158, _pProperties);
 					
 					double CZ_q = NonDimensionalDerivatives.GetCZ_q();
-					UTASSERT<double>("UTest1GetCz_q()", -7.86, CZ_q );
+					UTASSERT<double>("UTest1GetCZ_q()", -7.86, CZ_q );
 				}
 				void UTest1GetCm_q()
 				{
@@ -113,6 +123,17 @@ namespace AircraftSimulation
 					double Cm_q = NonDimensionalDerivatives.GetCm_q();
 					UTASSERT<double>("UTest1GetCm_q()",-35.8, Cm_q);
 				}
+				void UTest1GetCX_alpha_dot()
+				{
+					AircraftCoefficientsMock mock;
+			
+					IAircraftCoefficients* _pMock =  (IAircraftCoefficients*) &mock;
+					AircraftNonDimensionalDerivatives NonDimensionalDerivatives(_pMock, 0.158, _pProperties);
+					
+					double CX_alpha_dot = NonDimensionalDerivatives.GetCX_alpha_dot();
+					UTASSERT<double>("UTest1GetCX_alpha_dot()", -0, CX_alpha_dot);
+				}
+
 				void UTest1GetCZ_alpha_dot()
 				{
 					AircraftCoefficientsMock mock;
@@ -158,8 +179,10 @@ namespace AircraftSimulation
 					UTest1GetCZ_uForIncompressableFlow();
 					UTest1GetCZ_uForCompressableFlow();
 					UTest1GetCm_u();
+					UTest1GetCX_q();
 					UTest1GetCZ_q();
 					UTest1GetCm_q();
+					UTest1GetCX_alpha_dot();
 					UTest1GetCZ_alpha_dot();
 					UTest1GetCm_alpha_dot();
 				}
