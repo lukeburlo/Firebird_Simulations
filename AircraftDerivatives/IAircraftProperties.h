@@ -22,6 +22,7 @@ namespace AircraftSimulation
 			virtual float GetWingSurfaceArea() = 0; 
 			virtual float GetWingChord() = 0; 
 			virtual float GetWingAspectRatio() = 0;
+			virtual float GetSpanEfficiencyFactor() = 0;
 	};
 }
 

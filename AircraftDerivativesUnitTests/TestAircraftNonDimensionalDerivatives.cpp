@@ -123,6 +123,38 @@ namespace AircraftSimulation
 					double Cm_q = NonDimensionalDerivatives.GetCm_q();
 					UTASSERT<double>("UTest1GetCm_q()",-35.8, Cm_q);
 				}
+				void UTest1GetCX_alpha()
+				{
+					AircraftCoefficientsMock mock;
+					mock.C_L_0 = 0.77;
+					mock.C_L_alpha_wing = 5.2;
+
+					IAircraftCoefficients* _pMock =  (IAircraftCoefficients*) &mock;
+					AircraftNonDimensionalDerivatives NonDimensionalDerivatives(_pMock, 0.158, _pProperties);
+					
+					double CX_alpha = NonDimensionalDerivatives.GetCX_alpha();
+					UTASSERT<double>("UTest1GetCX_alpha()", 0.421, CX_alpha);
+				}
+				void UTest1GetCZ_alpha()
+				{
+					AircraftCoefficientsMock mock;
+			
+					IAircraftCoefficients* _pMock =  (IAircraftCoefficients*) &mock;
+					AircraftNonDimensionalDerivatives NonDimensionalDerivatives(_pMock, 0.158, _pProperties);
+					
+					double CZ_alpha = NonDimensionalDerivatives.GetCZ_alpha();
+					UTASSERT<double>("UTest1GetCZ_alpha()", -1, CZ_alpha);
+				}
+				void UTest1GetCm_alpha()
+				{
+					AircraftCoefficientsMock mock;
+			
+					IAircraftCoefficients* _pMock =  (IAircraftCoefficients*) &mock;
+					AircraftNonDimensionalDerivatives NonDimensionalDerivatives(_pMock, 0.158, _pProperties);
+					
+					double Cm_alpha = NonDimensionalDerivatives.GetCZ_alpha();
+					UTASSERT<double>("UTest1GetCm_alpha()", -1, Cm_alpha);
+				}
 				void UTest1GetCX_alpha_dot()
 				{
 					AircraftCoefficientsMock mock;
@@ -131,9 +163,8 @@ namespace AircraftSimulation
 					AircraftNonDimensionalDerivatives NonDimensionalDerivatives(_pMock, 0.158, _pProperties);
 					
 					double CX_alpha_dot = NonDimensionalDerivatives.GetCX_alpha_dot();
-					UTASSERT<double>("UTest1GetCX_alpha_dot()", -0, CX_alpha_dot);
+					UTASSERT<double>("UTest1GetCX_alpha_dot()", 0, CX_alpha_dot);
 				}
-
 				void UTest1GetCZ_alpha_dot()
 				{
 					AircraftCoefficientsMock mock;
@@ -182,6 +213,9 @@ namespace AircraftSimulation
 					UTest1GetCX_q();
 					UTest1GetCZ_q();
 					UTest1GetCm_q();
+					UTest1GetCX_alpha();
+					UTest1GetCZ_alpha();
+					UTest1GetCm_alpha();
 					UTest1GetCX_alpha_dot();
 					UTest1GetCZ_alpha_dot();
 					UTest1GetCm_alpha_dot();
