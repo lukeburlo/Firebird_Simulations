@@ -153,7 +153,7 @@ namespace AircraftSimulation
 
 	void AircraftNonDimensionalDerivatives::CalculateCZ_alpha()
 	{
-		_CZ_alpha = 0;
+		_CZ_alpha = -(_pCoefficients->GetC_L_alpha_wing() + _pCoefficients->GetC_D_0());
 	}
 
 	double AircraftNonDimensionalDerivatives::GetCZ_alpha()

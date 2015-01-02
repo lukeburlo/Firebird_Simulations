@@ -138,12 +138,13 @@ namespace AircraftSimulation
 				void UTest1GetCZ_alpha()
 				{
 					AircraftCoefficientsMock mock;
-			
+					mock.C_D_0 = 0.057;
+					mock.C_L_alpha_wing = 5.2;
 					IAircraftCoefficients* _pMock =  (IAircraftCoefficients*) &mock;
 					AircraftNonDimensionalDerivatives NonDimensionalDerivatives(_pMock, 0.158, _pProperties);
 					
 					double CZ_alpha = NonDimensionalDerivatives.GetCZ_alpha();
-					UTASSERT<double>("UTest1GetCZ_alpha()", -1, CZ_alpha);
+					UTASSERT<double>("UTest1GetCZ_alpha()", -5.26, CZ_alpha);
 				}
 				void UTest1GetCm_alpha()
 				{
