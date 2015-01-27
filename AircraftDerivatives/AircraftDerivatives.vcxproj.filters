@@ -21,9 +21,6 @@
     <ClInclude Include="IAircraftCoefficients.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="NavionAircraftCoefficients.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
     <ClInclude Include="AircraftNonDimensionalDerivatives.h">
       <Filter>Header Files</Filter>
     </ClInclude>

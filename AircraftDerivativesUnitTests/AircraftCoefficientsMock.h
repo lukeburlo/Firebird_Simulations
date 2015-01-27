@@ -60,7 +60,7 @@ namespace AircraftSimulation
 				 double dC_m_dM;
 				 double C_L_alpha_tail;
 				 double C_L_alpha_wing;
-				
+				 double C_L_alpha_fuselage;
 
 				 float GetTailEfficency(){ return TailEfficency; }
 				 double GetC_D_0(){ return C_D_0; }
@@ -70,6 +70,7 @@ namespace AircraftSimulation
 				 double GetdC_m_dM(){ return dC_m_dM; }
 				 double GetC_L_alpha_tail(){ return C_L_alpha_tail; }
 				 double GetC_L_alpha_wing(){ return C_L_alpha_wing; }
+				 double GetC_L_alpha_fuselage(){ return C_L_alpha_fuselage; }
 				  
 		};
 	}

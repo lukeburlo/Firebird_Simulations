@@ -9,13 +9,12 @@
 //
 /*********************************************************************************************************************/
 #include <math.h>
+#include <stdio.h>
 #include "AircraftNonDimensionalDerivatives.h"
 #include "IAircraftProperties.h"
 #include "DiagnosticsTools.h"
 
 #define PI 3.14
-
-
 
 namespace AircraftSimulation
 {
@@ -163,7 +162,11 @@ namespace AircraftSimulation
 
 	void AircraftNonDimensionalDerivatives::CalculateCm_alpha()
 	{
-		_Cm_alpha = 0;
+		_Cm_alpha = (_pCoefficients->GetC_L_alpha_fuselage()) + 
+			(_pCoefficients->GetC_L_alpha_wing()*(_properties->GetCentreOfGravityFromWingLeadingEdge() -
+												  _properties->GetAerodynamicCentreFromWingLeadingEdge())) +
+			(_tailVolumeRatio*_properties->GetSpanEfficiencyFactor()*_pCoefficients->GetC_L_alpha_tail()*
+			(1 - _downwashChangeDueToAoA));
 	}
 
 	double AircraftNonDimensionalDerivatives::GetCm_alpha()
@@ -191,7 +194,6 @@ namespace AircraftSimulation
 	{
 		return _CZ_alpha_dot;
 	}
-
 
 	void AircraftNonDimensionalDerivatives::CalculateCm_alpha_dot()
 	{

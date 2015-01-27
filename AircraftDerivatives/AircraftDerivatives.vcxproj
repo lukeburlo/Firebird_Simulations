@@ -119,7 +119,6 @@
     <ClInclude Include="IAircraftCoefficients.h" />
     <ClInclude Include="IAircraftNonDimensionalDerivatives.h" />
     <ClInclude Include="IAircraftProperties.h" />
-    <ClInclude Include="NavionAircraftCoefficients.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="AircraftNonDimensionalDerivatives.cpp" />
