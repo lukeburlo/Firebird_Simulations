@@ -158,7 +158,7 @@ namespace AircraftSimulation
 					AircraftNonDimensionalDerivatives NonDimensionalDerivatives(_pMock, 0.158, _pProperties);
 					
 					double Cm_alpha = NonDimensionalDerivatives.GetCm_alpha();
-					UTASSERT<double>("UTest1GetCm_alpha()", -0.83, Cm_alpha);
+					UTASSERT<double>("UTest1GetCm_alpha()", -0.885, Cm_alpha);
 				}
 				void UTest1GetCX_alpha_dot()
 				{

@@ -126,6 +126,7 @@ namespace AircraftSimulation
 	{
 		return _CZ_q;
 	}
+
 	void AircraftNonDimensionalDerivatives::CalculateCm_q()
 	{
 		_Cm_q = -2*_pCoefficients->GetC_L_alpha_tail()*_pCoefficients->GetTailEfficency()*_tailVolumeRatio*
@@ -164,8 +165,8 @@ namespace AircraftSimulation
 	{
 		_Cm_alpha = (_pCoefficients->GetC_L_alpha_fuselage()) + 
 			(_pCoefficients->GetC_L_alpha_wing()*(_properties->GetCentreOfGravityFromWingLeadingEdge() -
-												  _properties->GetAerodynamicCentreFromWingLeadingEdge())) +
-			(_tailVolumeRatio*_properties->GetSpanEfficiencyFactor()*_pCoefficients->GetC_L_alpha_tail()*
+												  _properties->GetAerodynamicCentreFromWingLeadingEdge())) -
+			(_tailVolumeRatio*_pCoefficients->GetTailEfficency()*_pCoefficients->GetC_L_alpha_tail()*
 			(1 - _downwashChangeDueToAoA));
 	}
 

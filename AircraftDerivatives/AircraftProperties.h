@@ -28,8 +28,8 @@ namespace AircraftSimulation
 			float GetWingChord(){ return 10.1; }
 			float GetWingAspectRatio() { return 9.75; }
 			float GetSpanEfficiencyFactor() { return 0.75; }
-			float GetCentreOfGravityFromWingLeadingEdge() { return 0; }
-			float GetAerodynamicCentreFromWingLeadingEdge() { return 0; }
+			float GetCentreOfGravityFromWingLeadingEdge() { return 0.4; }
+			float GetAerodynamicCentreFromWingLeadingEdge() { return 0.25; }
 
 	};
 }
