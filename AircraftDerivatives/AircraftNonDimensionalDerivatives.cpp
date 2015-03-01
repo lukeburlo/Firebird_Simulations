@@ -57,6 +57,8 @@ namespace AircraftSimulation
 		CalculateCX_alpha_dot();
 		CalculateCZ_alpha_dot();
 		CalculateCm_alpha_dot();
+		CalculateCZ_delta_elevator();
+		CalculateCm_delta_elevator();
 	}
 
 	void AircraftNonDimensionalDerivatives::CalculateTailVolumeRatio()
@@ -206,5 +208,26 @@ namespace AircraftSimulation
 	{
 		return _Cm_alpha_dot;
 	}
+
+	void AircraftNonDimensionalDerivatives::CalculateCZ_delta_elevator()
+	{
+		_CZ_delta_elevator = -2;
+	}
+
+	double AircraftNonDimensionalDerivatives::GetCZ_delta_elevator()
+	{
+		return _CZ_delta_elevator;
+	}
+
+	void AircraftNonDimensionalDerivatives::CalculateCm_delta_elevator()
+	{
+		_Cm_delta_elevator = -3;
+	}
+
+	double AircraftNonDimensionalDerivatives::GetCm_delta_elevator()
+	{
+		return _Cm_delta_elevator;
+	}
+	
 
 }

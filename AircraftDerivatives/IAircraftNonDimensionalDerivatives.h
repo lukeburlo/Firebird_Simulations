@@ -32,6 +32,8 @@ namespace AircraftSimulation
 			virtual double GetCX_alpha_dot() = 0;
 			virtual double GetCZ_alpha_dot() = 0;
 			virtual double GetCm_alpha_dot() = 0;
+			virtual double GetCZ_delta_elevator() = 0;
+			virtual double GetCm_delta_elevator() = 0;
 
 	};
 }

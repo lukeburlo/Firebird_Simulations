@@ -41,6 +41,8 @@ namespace AircraftSimulation
 			double _CX_alpha_dot;
 			double _CZ_alpha_dot;
 			double _Cm_alpha_dot;
+			double _CZ_delta_elevator;
+			double _Cm_delta_elevator;
 
 			void CalculateTailVolumeRatio();
 			void CalculateDownwashChangeDueToAoA();
@@ -56,6 +58,8 @@ namespace AircraftSimulation
 			void CalculateCX_alpha_dot();
 			void CalculateCZ_alpha_dot();
 			void CalculateCm_alpha_dot();
+			void CalculateCZ_delta_elevator();
+			void CalculateCm_delta_elevator();
 
 		protected:
 			void Calculate();
@@ -77,6 +81,8 @@ namespace AircraftSimulation
 			virtual double GetCX_alpha_dot();
 			virtual double GetCZ_alpha_dot();
 			virtual double GetCm_alpha_dot();
+			virtual double GetCZ_delta_elevator();
+			virtual double GetCm_delta_elevator();
 	};
 }
 

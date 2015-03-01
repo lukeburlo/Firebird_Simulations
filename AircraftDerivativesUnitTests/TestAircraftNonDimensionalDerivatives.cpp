@@ -196,6 +196,26 @@ namespace AircraftSimulation
 					double Cm_alpha_dot = NonDimensionalDerivatives.GetCm_alpha_dot();
 					UTASSERT<double>("UTest1GetCm_alpha_dot()", -12.16, Cm_alpha_dot);
 				}
+				void UTest1GetCZ_delta_elevator()
+				{
+					AircraftCoefficientsMock mock;
+			
+					IAircraftCoefficients* _pMock =  (IAircraftCoefficients*) &mock;
+					AircraftNonDimensionalDerivatives NonDimensionalDerivatives(_pMock, 0.158, _pProperties);
+					
+					double CZ_delta_elevator = NonDimensionalDerivatives.GetCZ_delta_elevator();
+					UTASSERT<double>("UTest1GetCZ_delta_elevator()", -0.46, CZ_delta_elevator);
+				}
+				void UTest1GetCm_delta_elevator()
+				{
+					AircraftCoefficientsMock mock;
+			
+					IAircraftCoefficients* _pMock =  (IAircraftCoefficients*) &mock;
+					AircraftNonDimensionalDerivatives NonDimensionalDerivatives(_pMock, 0.158, _pProperties);
+					
+					double Cm_delta_elevator = NonDimensionalDerivatives.GetCm_delta_elevator();
+					UTASSERT<double>("UTest1GetCZ_delta_elevator()", -2.09, Cm_delta_elevator);
+				}
 
 			public:
 				TestAircraftNonDimensionalDerivatives()
@@ -223,6 +243,8 @@ namespace AircraftSimulation
 					UTest1GetCX_alpha_dot();
 					UTest1GetCZ_alpha_dot();
 					UTest1GetCm_alpha_dot();
+					UTest1GetCZ_delta_elevator();
+					UTest1GetCm_delta_elevator();
 				}
 
 		};
