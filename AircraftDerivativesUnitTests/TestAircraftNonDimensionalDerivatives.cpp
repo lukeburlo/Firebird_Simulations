@@ -199,22 +199,26 @@ namespace AircraftSimulation
 				void UTest1GetCZ_delta_elevator()
 				{
 					AircraftCoefficientsMock mock;
+					mock.C_L_alpha_tail = 3.5;
+					mock.TailEfficency = 1.0;
 			
 					IAircraftCoefficients* _pMock =  (IAircraftCoefficients*) &mock;
 					AircraftNonDimensionalDerivatives NonDimensionalDerivatives(_pMock, 0.158, _pProperties);
 					
 					double CZ_delta_elevator = NonDimensionalDerivatives.GetCZ_delta_elevator();
-					UTASSERT<double>("UTest1GetCZ_delta_elevator()", -0.46, CZ_delta_elevator);
+					UTASSERT<double>("UTest1GetCZ_delta_elevator()", -0.475, CZ_delta_elevator);
 				}
 				void UTest1GetCm_delta_elevator()
 				{
 					AircraftCoefficientsMock mock;
-			
+					mock.C_L_alpha_tail = 3.5;
+					mock.TailEfficency = 1.0;
+
 					IAircraftCoefficients* _pMock =  (IAircraftCoefficients*) &mock;
 					AircraftNonDimensionalDerivatives NonDimensionalDerivatives(_pMock, 0.158, _pProperties);
 					
 					double Cm_delta_elevator = NonDimensionalDerivatives.GetCm_delta_elevator();
-					UTASSERT<double>("UTest1GetCZ_delta_elevator()", -2.09, Cm_delta_elevator);
+					UTASSERT<double>("UTest1GetCZ_delta_elevator()", -2.16, Cm_delta_elevator);
 				}
 
 			public:

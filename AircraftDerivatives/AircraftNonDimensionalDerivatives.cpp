@@ -211,7 +211,8 @@ namespace AircraftSimulation
 
 	void AircraftNonDimensionalDerivatives::CalculateCZ_delta_elevator()
 	{
-		_CZ_delta_elevator = -2;
+		_CZ_delta_elevator = -_pCoefficients->GetC_L_alpha_tail()*_properties->GetElevatorFlapEffectivenessParameter()*
+			_pCoefficients->GetTailEfficency()*(_properties->GetTailSurfaceArea()/_properties->GetWingSurfaceArea());
 	}
 
 	double AircraftNonDimensionalDerivatives::GetCZ_delta_elevator()
@@ -221,7 +222,8 @@ namespace AircraftSimulation
 
 	void AircraftNonDimensionalDerivatives::CalculateCm_delta_elevator()
 	{
-		_Cm_delta_elevator = -3;
+		_Cm_delta_elevator = -_pCoefficients->GetC_L_alpha_tail()*_properties->GetElevatorFlapEffectivenessParameter()*
+			_pCoefficients->GetTailEfficency()*_tailVolumeRatio;
 	}
 
 	double AircraftNonDimensionalDerivatives::GetCm_delta_elevator()

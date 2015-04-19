@@ -25,6 +25,7 @@ namespace AircraftSimulation
 			virtual float GetSpanEfficiencyFactor() = 0;
 			virtual float GetCentreOfGravityFromWingLeadingEdge() = 0;
 			virtual float GetAerodynamicCentreFromWingLeadingEdge() = 0;
+			virtual float GetElevatorFlapEffectivenessParameter() = 0;
 	};
 }
 

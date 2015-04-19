@@ -30,6 +30,7 @@ namespace AircraftSimulation
 			float GetSpanEfficiencyFactor() { return 0.75; }
 			float GetCentreOfGravityFromWingLeadingEdge() { return 0.4; }
 			float GetAerodynamicCentreFromWingLeadingEdge() { return 0.25; }
+			float GetElevatorFlapEffectivenessParameter() { return 0.55; }
 
 	};
 }
