@@ -16,7 +16,7 @@
 
 #include <vector>
 #include "IIntegrator.h"
-#include "IStateResultHandler.h"
+#include "IStateResponseHandler.h"
 #include "IEoM.h"
 
 using namespace std;
@@ -29,7 +29,7 @@ namespace Simulation
 			double _startTime;
 			double _endTime;
 			double _timeStep;
-			IStateResultHandler* _pResultHandler;
+			IStateResponseHandler* _pResultHandler;
 			IEoM* _pEoM;
 			int _numberOfStates;
 
@@ -40,7 +40,7 @@ namespace Simulation
 			void multiply(double X, vector<double>& V, vector<double>& R);
 	
 		public:
-			RungeKuttaIntegrator(double timeStep, IEoM* pEoM, IStateResultHandler* pResultHandler);
+			RungeKuttaIntegrator(double timeStep, IEoM* pEoM, IStateResponseHandler* pResultHandler);
 			virtual ~RungeKuttaIntegrator();
 			RungeKuttaIntegrator(RungeKuttaIntegrator& other);
 			void SetIntergrateTimeInterval(double startTime, double endTime);

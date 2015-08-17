@@ -12,12 +12,12 @@
 
 #include <sstream>
 #include "FileStreamHandler.h"
-#include "IStateResultHandler.h"
+#include "IStateResponseHandler.h"
 #include "BaseSimulator.h"
 
 namespace Simulation 
 {
-		FileStreamHandler::FileStreamHandler(BaseSimulator& product) : IStateResultHandler(),
+		FileStreamHandler::FileStreamHandler(BaseSimulator& product) : IStateResponseHandler(),
 			_product(product)
 		{
 		

@@ -14,12 +14,12 @@
 #define _FileStreamHandler_h_    
 
 #include <sstream>
-#include "IStateResultHandler.h"
+#include "IStateResponseHandler.h"
 #include "BaseSimulator.h"
 
 namespace Simulation 
 {
-	class FileStreamHandler : public IStateResultHandler
+	class FileStreamHandler : public IStateResponseHandler
 	{
 		protected:
 			BaseSimulator& _product;

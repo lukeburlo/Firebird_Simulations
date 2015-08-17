@@ -25,7 +25,7 @@ namespace Simulation
 			virtual void BuildDataModel() = 0;
 			virtual void BuildEoM() = 0;
 			virtual void BuildIntergrator() = 0;
-			virtual BaseSimulator* GetResult() = 0;
+			virtual BaseSimulator* GetSimulator() = 0;
 
 	};
 }

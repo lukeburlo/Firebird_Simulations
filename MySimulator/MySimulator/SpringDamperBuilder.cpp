@@ -21,11 +21,24 @@ using namespace std;
 
 namespace Simulation
 {
+	//remove this constructor as well as _pResultHandler when finished
 	SpringDamperBuilder::SpringDamperBuilder() : 
 			ISimulatorBuilder(),
 			_outputFileName("SpringDamperRespose.txt"),
 			_pProduct(0),
-			_pEoM(0),_pResultHandler(0),
+			_pEoM(0),
+			_pResultHandler(0),
+			_pIntergrator(0), 
+			_pDataModel(0)
+	{
+		_pProduct = new BaseSimulator(_outputFileName);
+	}
+	SpringDamperBuilder::SpringDamperBuilder(IStateResponseHandler* pStateHandler) : 
+			ISimulatorBuilder(),
+			_outputFileName("SpringDamperRespose2.txt"),
+			_pProduct(0),
+			_pEoM(0),
+			_pResultHandler(pStateHandler),
 			_pIntergrator(0), 
 			_pDataModel(0)
 	{
@@ -57,7 +70,7 @@ namespace Simulation
 			headerNames[1] = 0.0;
 			_pProduct->SetIntialStates(intialStates);
 
-			double timeInterval = 30.0;
+			double timeInterval = 8.0;
 			vector<double> input(1,5);
 			ScheduleInput scheduledInput(timeInterval, input);
 			vector<ScheduleInput> scheduledInputs(1, scheduledInput);
@@ -78,11 +91,11 @@ namespace Simulation
 	void SpringDamperBuilder::BuildIntergrator()
 	{
 		_pResultHandler = new FileStreamHandler(*_pProduct);
-		_pIntergrator = new RungeKuttaIntegrator(0.001,_pEoM,_pResultHandler);
+		_pIntergrator = new RungeKuttaIntegrator(0.1,_pEoM,_pResultHandler);
 		_pProduct->SetEoMIntegrator(_pIntergrator);
 	}
 			
-	BaseSimulator* SpringDamperBuilder::GetResult()
+	BaseSimulator* SpringDamperBuilder::GetSimulator()
 	{
 		return _pProduct;
 	}

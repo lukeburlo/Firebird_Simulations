@@ -76,7 +76,7 @@ namespace Simulation
 	}
 	
 	RungeKuttaIntegrator::RungeKuttaIntegrator(double timeStep, 
-		IEoM* pEoM, IStateResultHandler* pResultHandler) : IIntegrator()
+		IEoM* pEoM, IStateResponseHandler* pResultHandler) : IIntegrator()
 	{
 		_startTime = 0.0;
 		_endTime = 0.0;

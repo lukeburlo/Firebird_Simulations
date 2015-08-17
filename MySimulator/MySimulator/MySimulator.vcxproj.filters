@@ -62,9 +62,6 @@
     <ClInclude Include="IIntegrator.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="IStateResultHandler.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
     <ClInclude Include="ISimulatorBuilder.h">
       <Filter>Header Files</Filter>
     </ClInclude>
@@ -123,6 +120,9 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="AircraftNavionData.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="IStateResponseHandler.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

@@ -19,7 +19,7 @@
 #include "IEoM.h"
 #include "IIntegrator.h"
 #include "RungeKuttaIntegrator.h"
-#include "IStateResultHandler.h"
+#include "IStateResponseHandler.h"
 #include "IAircraftSimulatorInput.h"
 
 using namespace std;
@@ -37,7 +37,7 @@ namespace AircraftSimulation
 			IAircraftSimulatorInput* _pSimulatorInput;
 			BaseSimulator* _pProduct;
 			IEoM* _pEoM;
-			IStateResultHandler* _pResultHandler;
+			IStateResponseHandler* _pResultHandler;
 			IIntegrator* _pIntergrator;
 			IAircraft* _aircraftDataModel;
 			double _intialSpeed;

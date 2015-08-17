@@ -18,7 +18,7 @@
 #include "ISimulatorBuilder.h"
 #include "IEoM.h"
 #include "IIntegrator.h"
-#include "IStateResultHandler.h"
+#include "IStateResponseHandler.h"
 #include <vector>
 #include "ISpringDamperDataRepository.h"
 
@@ -30,19 +30,21 @@ namespace Simulation
 			string _outputFileName;
 			BaseSimulator* _pProduct;
 			IEoM* _pEoM;
-			IStateResultHandler* _pResultHandler;
+			IStateResponseHandler* _pResultHandler;
 			IIntegrator* _pIntergrator;
 			ISpringDamperDataRepository* _pDataModel;
 
 
 		public:
+			//remove default
 			SpringDamperBuilder();
+			SpringDamperBuilder(IStateResponseHandler* pStateHandler);
 			virtual ~SpringDamperBuilder();
 			void BuildCommandInputs();
 			void BuildDataModel();
 			void BuildEoM();
 			void BuildIntergrator();
-			BaseSimulator* GetResult();
+			BaseSimulator* GetSimulator();
 	};
 }
 

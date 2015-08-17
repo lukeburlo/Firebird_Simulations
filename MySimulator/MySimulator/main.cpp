@@ -26,7 +26,7 @@ int main()
 
 		Director::Instance()->Construct(b);
 
-		BaseSimulator* sim = b->GetResult();
+		BaseSimulator* sim = b->GetSimulator();
 
 		sim->Run();
 	}
