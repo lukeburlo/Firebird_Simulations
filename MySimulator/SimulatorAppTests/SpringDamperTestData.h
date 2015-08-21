@@ -13,11 +13,12 @@
 //
 /*********************************************************************************************************************/
 
-#ifndef _TestStateResponseHandler_h_  
-#define _TestStateResponseHandler_h_ 
+#ifndef _SpringDamperTestData_h_  
+#define _SpringDamperTestData_h_ 
 
 
 #include <map>
+#include <exception>
 
 #include "IStateResponseHandler.h"
 
@@ -29,6 +30,7 @@ namespace ApplicationTesting
 			class State
 			{
 				public:
+					State(): Position(0.0), Velocity(0.0){}
 					State(double position, double velocity) : 
 						 Position(position),
 						 Velocity(velocity)
@@ -36,12 +38,15 @@ namespace ApplicationTesting
 					double Position;
 					double Velocity;
 			};
-
+		private:
+		std::map<double,SpringDamperTestData::State> _testData;
+		void AddStateDataToStore(double time, double position, double velocity);
+		void CreateData();
+		
 		public:
-			std::map<double,SpringDamperTestData::State> GetData = {
-				(0,State(0.00603,0.11836)
-
-			};
+			SpringDamperTestData();
+			~SpringDamperTestData();
+			State GetStateData(int time) throw(range_error);
 	};
 }
 

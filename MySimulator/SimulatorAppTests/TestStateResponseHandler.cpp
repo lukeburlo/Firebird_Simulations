@@ -11,6 +11,7 @@
 
 #include "TestStateResponseHandler.h"
 #include "SpringDamperTestData.h"
+#include "TestTools.h"
 
 namespace ApplicationTesting
 {
@@ -20,11 +21,7 @@ namespace ApplicationTesting
 
 	void TestStateResponseHandler::Handle(double time, vector<double>& states)
 	{
-		StateResponse aResponse;
-		aResponse.Time = time;
-		aResponse.States = states;
-
-		SpringDamperTestData expect
+		SpringDamperTestData::State expectedState = _expectedResponses.GetStateData(time);
 		
 	}
 }

@@ -15,6 +15,7 @@
 #include <vector>
 
 #include "IStateResponseHandler.h"
+#include "SpringDamperTestData.h"
 
 namespace ApplicationTesting
 {
@@ -29,7 +30,7 @@ namespace ApplicationTesting
 			};
 
 		private:
-			vector<TestStateResponseHandler::StateResponse> _stateResponses;
+			SpringDamperTestData _expectedResponses;
 
 		public:
 			TestStateResponseHandler();

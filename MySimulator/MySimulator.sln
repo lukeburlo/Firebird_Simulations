@@ -3,7 +3,9 @@ Microsoft Visual Studio Solution File, Format Version 11.00
 # Visual Studio 2010
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "MySimulator", "MySimulator\MySimulator.vcxproj", "{0C4F17DD-6D76-4032-9851-30D627FC9151}"
 EndProject
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "SimulatorAppTests", "SimulatorAppTests\SimulatorAppTests.vcxproj", "{069F655B-CDFA-45E0-9E70-3EE1F06F0911}"
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "SpringDamperAppTests", "SimulatorAppTests\SimulatorAppTests.vcxproj", "{069F655B-CDFA-45E0-9E70-3EE1F06F0911}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "FirebirdLibrary", "FirebirdLibrary\FirebirdLibrary.vcxproj", "{A387D483-FB34-42F8-96E0-C1DBE5A3C0A3}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -19,6 +21,10 @@ Global
 		{069F655B-CDFA-45E0-9E70-3EE1F06F0911}.Debug|Win32.Build.0 = Debug|Win32
 		{069F655B-CDFA-45E0-9E70-3EE1F06F0911}.Release|Win32.ActiveCfg = Release|Win32
 		{069F655B-CDFA-45E0-9E70-3EE1F06F0911}.Release|Win32.Build.0 = Release|Win32
+		{A387D483-FB34-42F8-96E0-C1DBE5A3C0A3}.Debug|Win32.ActiveCfg = Debug|Win32
+		{A387D483-FB34-42F8-96E0-C1DBE5A3C0A3}.Debug|Win32.Build.0 = Debug|Win32
+		{A387D483-FB34-42F8-96E0-C1DBE5A3C0A3}.Release|Win32.ActiveCfg = Release|Win32
+		{A387D483-FB34-42F8-96E0-C1DBE5A3C0A3}.Release|Win32.Build.0 = Release|Win32
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

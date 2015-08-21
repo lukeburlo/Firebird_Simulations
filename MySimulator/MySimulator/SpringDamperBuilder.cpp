@@ -90,7 +90,7 @@ namespace Simulation
 
 	void SpringDamperBuilder::BuildIntergrator()
 	{
-		_pResultHandler = new FileStreamHandler(*_pProduct);
+		//_pResultHandler = new FileStreamHandler(*_pProduct);
 		_pIntergrator = new RungeKuttaIntegrator(0.1,_pEoM,_pResultHandler);
 		_pProduct->SetEoMIntegrator(_pIntergrator);
 	}

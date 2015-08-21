@@ -11,14 +11,13 @@
     </ProjectConfiguration>
   </ItemGroup>
   <PropertyGroup Label="Globals">
-    <ProjectGuid>{069F655B-CDFA-45E0-9E70-3EE1F06F0911}</ProjectGuid>
+    <ProjectGuid>{A387D483-FB34-42F8-96E0-C1DBE5A3C0A3}</ProjectGuid>
     <Keyword>Win32Proj</Keyword>
-    <RootNamespace>SimulatorAppTests</RootNamespace>
-    <ProjectName>SpringDamperAppTests</ProjectName>
+    <RootNamespace>FirebirdLibrary</RootNamespace>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
-    <ConfigurationType>Application</ConfigurationType>
+    <ConfigurationType>StaticLibrary</ConfigurationType>
     <UseDebugLibraries>true</UseDebugLibraries>
     <CharacterSet>Unicode</CharacterSet>
   </PropertyGroup>
@@ -51,7 +50,6 @@
       <WarningLevel>Level3</WarningLevel>
       <Optimization>Disabled</Optimization>
       <PreprocessorDefinitions>WIN32;_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
-      <AdditionalIncludeDirectories>C:\Users\burlo\Documents\GitHub\Firebird_Simulations\MySimulator\FirebirdLibrary;C:\Users\burlo\Documents\GitHub\Firebird_Simulations\MySimulator\MySimulator;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
@@ -76,21 +74,10 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="main.cpp" />
-    <ClCompile Include="SpringDamperTestData.cpp" />
-    <ClCompile Include="TestStateResponseHandler.cpp" />
+    <ClCompile Include="TestTools.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\FirebirdLibrary\FirebirdLibrary.vcxproj">
-      <Project>{a387d483-fb34-42f8-96e0-c1dbe5a3c0a3}</Project>
-    </ProjectReference>
-    <ProjectReference Include="..\MySimulator\MySimulator.vcxproj">
-      <Project>{0c4f17dd-6d76-4032-9851-30d627fc9151}</Project>
-    </ProjectReference>
-  </ItemGroup>
-  <ItemGroup>
-    <ClInclude Include="SpringDamperTestData.h" />
-    <ClInclude Include="TestStateResponseHandler.h" />
+    <ClInclude Include="TestTools.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
