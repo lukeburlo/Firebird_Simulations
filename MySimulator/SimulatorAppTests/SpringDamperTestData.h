@@ -46,7 +46,7 @@ namespace ApplicationTesting
 		public:
 			SpringDamperTestData();
 			~SpringDamperTestData();
-			State GetStateData(int time) throw(range_error);
+			State GetStateData(double time); //throw(range_error);
 	};
 }
 

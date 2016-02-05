@@ -16,16 +16,24 @@
 
 namespace FirebirdTest
 {
-	class TestTools
+	class  TestTools
 	{
-		public:
+		private:
 			TestTools();
 			~TestTools();
+
+		public:
 			template< typename T> 
-			bool IsEqual(T x, T y);
+			static bool IsEqual(T x, T y);
 			template< typename T> 
-			void Assert(std::string testName, T expected, T actual);
+			static void Assert(std::string testName, T expected, T actual);
 	};
+
+	//Template instantiations
+	template bool TestTools::IsEqual(int, int);
+	template bool TestTools::IsEqual(double, double);
+	template void TestTools::Assert(std::string, int, int);
+	template void TestTools::Assert(std::string, double, double);
 }
 
 #endif

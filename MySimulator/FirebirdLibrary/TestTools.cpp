@@ -17,7 +17,6 @@
 
 namespace FirebirdTest
 {
-
 	TestTools::TestTools(){}
 
 	TestTools::~TestTools(){}
@@ -32,15 +31,15 @@ namespace FirebirdTest
 	template< typename T> 
 	void TestTools::Assert(std::string testName, T expected, T actual)
 	{
-		cout << "Test: " <<  testName << " ";
+		std::cout << "Test: " <<  testName << " ";
 
 		if(IsEqual<T>(expected,actual))
 		{
-			cout << "PASSED." <<endl;
+			std::cout << "PASSED." << std::endl;
 		}
 		else
 		{
-			cout << "*** FAILED *** .... Expected: " << expected << " Actual: " << actual <<endl;
+			std::cout << "*** FAILED *** .... Expected: " << expected << " Actual: " << actual << std::endl;
 		}
 	}
 }

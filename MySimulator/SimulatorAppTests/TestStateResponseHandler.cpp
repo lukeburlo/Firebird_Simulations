@@ -9,12 +9,14 @@
 //
 /*********************************************************************************************************************/
 
+#include <sstream>
 #include "TestStateResponseHandler.h"
 #include "SpringDamperTestData.h"
-#include "TestTools.h"
+#include "TestTools.h" 
 
 namespace ApplicationTesting
 {
+	
 	TestStateResponseHandler::TestStateResponseHandler(){}
 
 	TestStateResponseHandler::~TestStateResponseHandler(){}
@@ -22,6 +24,12 @@ namespace ApplicationTesting
 	void TestStateResponseHandler::Handle(double time, vector<double>& states)
 	{
 		SpringDamperTestData::State expectedState = _expectedResponses.GetStateData(time);
+
+		std::ostringstream timeToString;
+		timeToString << time;
+		std::string testDescription = "Test time: " + timeToString.str();
+		FirebirdTest::TestTools::Assert<double>(testDescription, expectedState.Position, states[0]);
 		
 	}
 }
+

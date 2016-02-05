@@ -37,6 +37,8 @@ int main()
 
 		sim->Run();
 
+		int i = 0;
+		std::cin >> i;
 
 	}
 	catch(exception& ex)

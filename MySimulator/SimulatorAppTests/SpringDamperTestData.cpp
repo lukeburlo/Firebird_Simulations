@@ -51,7 +51,7 @@ namespace ApplicationTesting
 		AddStateDataToStore(6.0, 0.43567, -0.02275);
 	}
 
-	SpringDamperTestData::State SpringDamperTestData::GetStateData(int time)
+	SpringDamperTestData::State SpringDamperTestData::GetStateData(double time)
 	{
 		State stateResponse = _testData[time];
 		
